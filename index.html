@@ -41,7 +41,7 @@ console.log('Data pushed', {key, value});
     
 <div style="text-align: center;"> 
 <!-- Button that triggers the GET request when clicked -->
-<button type="button" style="padding: 15px 30px; font-size: 20px;">Purchase</button> </div>
+<button type="button" style="padding: 15px 30px; font-size: 20px;" onclick="sendGetRequest()">Purchase</button> </div>
     
     
     
@@ -59,7 +59,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 const key = 'sale';
 const value = 'summer';
 
-// URL with querey paramaters
+// URL with query paramaters
 const url = `https://httpbin.org/get?key=${key}&value=${value}`;
 
 // Send GET request
