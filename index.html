@@ -56,7 +56,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 // Function to send GET request to httpbin.org
     function sendGetRequest() {
 // Define key and value for the GET request
-const key = 'sale':
+const key = 'sale';
 const value = 'summer';
 
 // URL with querey paramaters
@@ -68,7 +68,8 @@ fetch(url)
 // Convert response to JSON
 .then(response => response.json())
 .then(data => {
-console.log('Response:', data);}
+console.log('Response:', data);
+});
         
       }
 
