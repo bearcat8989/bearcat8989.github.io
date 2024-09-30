@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -9,23 +10,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MBHQRWM8');</script>
 <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
-     <title>GTM IMPLEMENTATION TEST</title>
-     </head>
+ <title>GTM IMPLEMENTATION TEST</title>
+    
+ </head>
+    
 <body>
 
-    <h1 style="text-align: center;">Google Tag Manager test page</h1>
+<h1 style="text-align: center;">Google Tag Manager test page</h1>
     
-    <script>
- const urlParams = new URLSearchParams(window.location.search);
-        const key = urlParams.get('key');
-        const value = urlParams.get('value');
+<script>
 
+    // Create a URLSearchParams object to parse the query string from the URL
+const urlParams = new URLSearchParams(window.location.search);
+
+    // Retrieve the value associated with the 'key' parameter from the query string
+const key = urlParams.get('key');
+
+    // Retrieve the value associated with the 'value' parameter from the query string
+const value = urlParams.get('value');
+
+    // Initialize the dataLayer array if it doesn't already exist
 window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ key, value });
+    
+    // Push an object containing the key and value to the dataLayer array
+window.dataLayer.push({ key, value });
+    
+    // Log a message to the console indicating the data has been pushed, along with the key and value
 console.log('Data pushed', { key, value});
         </script>
     
-  <div style="text-align: center;"> <button type="button" style="padding: 15px 30px; font-size: 20px;">Purchase</button> </div>
+<div style="text-align: center;"> 
+<!-- Button that triggers the GET request when clicked -->
+<button type="button" style="padding: 15px 30px; font-size: 20px;">Purchase</button> </div>
     
     
     
@@ -34,5 +50,14 @@ console.log('Data pushed', { key, value});
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+<script>
+// Script for sending GET request
 
+
+
+
+
+
+    
+</script>
 </body>
