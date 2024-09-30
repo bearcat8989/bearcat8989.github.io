@@ -36,7 +36,7 @@ window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({ key, value });
     
     // Log a message to the console indicating the data has been pushed, along with the key and value
-console.log('Data pushed', { key, value});
+console.log('Data pushed', {key, value});
         </script>
     
 <div style="text-align: center;"> 
@@ -50,10 +50,27 @@ console.log('Data pushed', { key, value});
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Script for sending GET request on button click (noscript) -->
+
 <script>
-// Script for sending GET request
+// Function to send GET request to httpbin.org
+    function sendGetRequest() {
+// Define key and value for the GET request
+const key = 'sale':
+const value = 'summer';
 
+// URL with querey paramaters
+const url = `https://httpbin.org/get?key=${key}$value=${value}`;
 
+// Send GET request
+fetch(url)
+
+// Convert response to JSON
+.then(response => response.json())
+.then(data => {
+console.log('Response:', data);}
+        
+      }
 
 
 
