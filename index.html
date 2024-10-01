@@ -12,14 +12,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta charset="UTF-8">
  <title>GTM IMPLEMENTATION TEST</title>
     
- </head>
-    
+</head>    
 <body>
-
 <h1 style="text-align: center;">Google Tag Manager test page</h1>
+<div style="text-align: center;"> 
+<!-- Button that triggers the GET request when clicked -->
+<button type="button" style="padding: 15px 30px; font-size: 20px;" onclick="sendGetRequest()">Purchase</button> </div>
     
 <script>
-
     // Create a URLSearchParams object to parse the query string from the URL
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -37,45 +37,26 @@ window.dataLayer.push({ key, value });
     
     // Log a message to the console indicating the data has been pushed, along with the key and value
 console.log('Data pushed', {key, value});
-        </script>
-    
-<div style="text-align: center;"> 
-<!-- Button that triggers the GET request when clicked -->
-<button type="button" style="padding: 15px 30px; font-size: 20px;" onclick="sendGetRequest()">Purchase</button> </div>
-    
-    
-    
+      
+   <!-- Script for sending GET request on button click (noscript) -->
+
+// Function to send GET request to httpbin.org
+    function sendGetRequest() {
+        // URL with query paramaters
+        const url = `https://httpbin.org/get?key=${key}&value=${value}`;
+        
+        // Send GET request
+        fetch(url)
+        
+        // Convert response to JSON
+        .then(response => response.json())
+        .then(data => {
+            console.log('Response:', data);
+        });      
+    };
+</script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBHQRWM8"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-    <!-- Script for sending GET request on button click (noscript) -->
-
-<script>
-// Function to send GET request to httpbin.org
-    function sendGetRequest() {
-// Define key and value for the GET request
-const key = 'sale';
-const value = 'summer';
-
-// URL with query paramaters
-const url = `https://httpbin.org/get?key=${key}&value=${value}`;
-
-// Send GET request
-fetch(url)
-
-// Convert response to JSON
-.then(response => response.json())
-.then(data => {
-console.log('Response:', data);
-});
-        
-      }
-
-
-
-
-    
-</script>
 </body>
